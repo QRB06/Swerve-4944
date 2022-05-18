@@ -12,7 +12,6 @@ import static frc.robot.Constants.BACK_RIGHT_MODULE_DRIVE_MOTOR;
 import static frc.robot.Constants.BACK_RIGHT_MODULE_STEER_ENCODER;
 import static frc.robot.Constants.BACK_RIGHT_MODULE_STEER_MOTOR;
 import static frc.robot.Constants.BACK_RIGHT_MODULE_STEER_OFFSET;
-import static frc.robot.Constants.DRIVETRAIN_PIGEON_ID;
 import static frc.robot.Constants.DRIVETRAIN_TRACKWIDTH_METERS;
 import static frc.robot.Constants.DRIVETRAIN_WHEELBASE_METERS;
 import static frc.robot.Constants.FRONT_LEFT_MODULE_DRIVE_MOTOR;
@@ -24,7 +23,6 @@ import static frc.robot.Constants.FRONT_RIGHT_MODULE_STEER_ENCODER;
 import static frc.robot.Constants.FRONT_RIGHT_MODULE_STEER_MOTOR;
 import static frc.robot.Constants.FRONT_RIGHT_MODULE_STEER_OFFSET;
 
-import com.ctre.phoenix.sensors.PigeonIMU;
 import com.kauailabs.navx.frc.AHRS;
 import com.swervedrivespecialties.swervelib.Mk3SwerveModuleHelper;
 import com.swervedrivespecialties.swervelib.SdsModuleConfigurations;

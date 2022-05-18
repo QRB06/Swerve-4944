@@ -47,4 +47,6 @@ public final class Constants {
     public static final int BACK_RIGHT_MODULE_STEER_MOTOR = 11; // FIXME Set back right steer motor ID
     public static final int BACK_RIGHT_MODULE_STEER_ENCODER = 12; // FIXME Set back right steer encoder ID
     public static final double BACK_RIGHT_MODULE_STEER_OFFSET = -Math.toRadians(322.4-80); // FIXME Measure and set back right steer offset
+
+    public static final int TURRET_SPARK = 13; //turret motor
 }
