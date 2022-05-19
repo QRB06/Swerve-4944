@@ -24,7 +24,9 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final DrivetrainSubsystem m_drivetrainSubsystem = new DrivetrainSubsystem();
   private final XboxController m_controller = new XboxController(0);
-  private final TurretSubsystem m_tTurretSubsystem = new TurretSubsystem();
+  public static TurretSubsystem turret = new TurretSubsystem();
+
+
   /**
    * The container for the robot. Contains subsystems, OI devices, and commands.
    */
@@ -41,7 +43,7 @@ public class RobotContainer {
             () -> -modifyAxis(m_controller.getLeftX()) * DrivetrainSubsystem.MAX_VELOCITY_METERS_PER_SECOND,
             () -> -modifyAxis(m_controller.getRightX()) * DrivetrainSubsystem.MAX_ANGULAR_VELOCITY_RADIANS_PER_SECOND
     ));
-    m_tTurretSubsystem.getDefaultCommand();
+  
 
     // Configure the button bindings
     configureButtonBindings();

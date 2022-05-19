@@ -11,6 +11,9 @@ import static frc.robot.subsystems.DrivetrainSubsystem.m_navx;
 
 import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.SPI;
+import edu.wpi.first.wpilibj.shuffleboard.Shuffleboard;
+import edu.wpi.first.wpilibj.shuffleboard.ShuffleboardTab;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Robot;
 import frc.robot.subsystems.DrivetrainSubsystem;
@@ -26,10 +29,13 @@ public class TurretSubsystem extends SubsystemBase {
   public double kP, kI, kD, kIz, kFF, kMaxOutput, kMinOutput, maxRPM, maxVel, minVel, maxAcc, allowedErr, rotations;
   double NavxRotate = m_navx.getYaw();
   //private final AHRS m_navx = new  AHRS(SPI.Port.kMXP, (byte) 200);
-
+  
 
     
     public TurretSubsystem() {
+    
+      //ShuffleboardTab tab = Shuffleboard.getTab("Turret");
+
       m_motor = new CANSparkMax(TURRET_SPARK, MotorType.kBrushless);
     
       m_motor.restoreFactoryDefaults();
@@ -37,9 +43,9 @@ public class TurretSubsystem extends SubsystemBase {
       m_pidController = m_motor.getPIDController();
       m_encoder = m_motor.getEncoder();
 
-      kP = 0.1; 
-      kI = 1e-4;
-      kD = 1; 
+      kP = 1; 
+      kI = 0;
+      kD = 0; 
       kIz = 0; 
       kFF = 0; 
       kMaxOutput = 1; 
@@ -79,12 +85,14 @@ public class TurretSubsystem extends SubsystemBase {
        */
    
         
-      
+      /** 
       processVariable = m_encoder.getPosition();
       rotations = (processVariable + (NavxRotate * .416));
       m_encoder.setPosition(rotations);
-      
-      m_pidController.setReference(setPoint, CANSparkMax.ControlType.kPosition);
+      */
+      SmartDashboard.putNumber("Rotations", rotations);
+      System.out.println(rotations);
+      m_pidController.setReference(rotations, CANSparkMax.ControlType.kPosition);
       }
     
 
