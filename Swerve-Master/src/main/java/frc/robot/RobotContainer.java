@@ -24,7 +24,7 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final DrivetrainSubsystem m_drivetrainSubsystem = new DrivetrainSubsystem();
   private final XboxController m_controller = new XboxController(0);
-  public static TurretSubsystem turret = new TurretSubsystem();
+  public static TurretSubsystem m_TurretSubsystem = new TurretSubsystem();
 
 
   /**
@@ -65,7 +65,7 @@ public class RobotContainer {
           
     //new Button(m_controller::getAButton)
             // No requirements because we don't need to interrupt anything
-            //.whileHeld(m_TurretSubsystem::MoveTurretLeft);
+            //.whileHeld(m_TurretSubsystem.TurretSubsystem());
     //new Button(m_controller::getBButton)
             // No requirements because we don't need to interrupt anything
             //.whileHeld(m_TurretSubsystem::MoveTurretRight);        
