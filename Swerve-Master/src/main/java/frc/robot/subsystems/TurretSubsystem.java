@@ -48,6 +48,10 @@ public class TurretSubsystem extends SubsystemBase {
 
       maxVel = 9000;
       maxAcc = 9000;
+      
+      double processVariable = m_encoder.getPosition();
+      rotations = (processVariable + (NavxRotate * .416));
+      m_encoder.setPosition(rotations);
 
 
       m_pidController.setP(kP);
@@ -64,19 +68,23 @@ public class TurretSubsystem extends SubsystemBase {
       m_pidController.setSmartMotionAllowedClosedLoopError(allowedErr, smartMotionSlot);
 
       
-    double setPoint, processVariable;
+    double setPoint;
     
-      setPoint = (100);
+      setPoint = (0);
       
       /**
        * As with other PID modes, Smart Motion is set by calling the
        * setReference method on an existing pid object and setting
        * the control type to kSmartMotion
        */
+   
+        
+      
       processVariable = m_encoder.getPosition();
       rotations = (processVariable + (NavxRotate * .416));
+      m_encoder.setPosition(rotations);
       
-      m_pidController.setReference(rotations, CANSparkMax.ControlType.kPosition);
+      m_pidController.setReference(setPoint, CANSparkMax.ControlType.kPosition);
       }
     
 
